@@ -2,15 +2,14 @@ package progolden.agenda.repositorios;
 
 import org.hibernate.Session;
 
-import progolden.agenda.entidades.Usuario;
+import progolden.agenda.entidades.Pessoa;
 
-public class UsuarioRepositorio {
+public class PessoaRepositorio {
+private Session session;
 	
-	private Session session;
-	
-	public void addUsuario(String login, int status_2, int id_pessoa) {
+	public void addPessoa(String nome, String cpf, long nascimento) {
 		abrirConexao();
-		this.session.save(new Usuario(login, status_2, id_pessoa));	
+		this.session.save(new Pessoa(nome, cpf, nascimento));	
 		fecharConexao();
 	}
 	

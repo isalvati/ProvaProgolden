@@ -15,6 +15,7 @@
 		<property name="hbm2ddl.auto">update</property>
 		
 		<mapping resource="Usuario.hbm.xml" />
+		<mapping resource="Pessoa.hbm.xml" />
 		
 	</session-factory>
 </hibernate-configuration>

@@ -4,15 +4,15 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name="progolden.agenda.entidades.Usuario" table="usuario">
+   <class name="progolden.agenda.entidades.Pessoa" table="pessoa">
       <meta attribute="class-description">
-         Tabela usuario
+         Tabela pessoa
       </meta>
       <id name="id" type="int" column="id">
          <generator class="native"/>
       </id>
-      <property name="login" column="login" type="string"/>
-      <property name="status_2" column="status_2" type="integer"/>
-      <property name="id_pessoa" column="id_pessoa" type="integer"/>
+      <property name="nome" column="nome" type="string"/>
+      <property name="cpf" column="cpf" type="string"/>
+      <property name="nascimento" column="nascimento" type="long"/>
    </class>
 </hibernate-mapping>

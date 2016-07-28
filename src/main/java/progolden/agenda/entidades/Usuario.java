@@ -4,31 +4,48 @@ package progolden.agenda.entidades;
 public class Usuario {
 	
 	private int id;
-	private String nome;
-	private String telefone;
+	private String login;
+	private int status_2;
+	private int id_pessoa;
 	
-	public Usuario(String nome, String telefone) {
-		this.nome = nome;
-		this.telefone = telefone;
+	public Usuario(String login, int status_2, int id_pessoa) {
+		this.login = login;
+		this.status_2 = status_2;
+		this.id_pessoa = id_pessoa;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNome() {
-		return nome;
+
+	public String getLogin() {
+		return login;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
-	public String getTelefone() {
-		return telefone;
+
+	public int getStatus_2() {
+		return status_2;
 	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+
+	public void setStatus_2(int status_2) {
+		this.status_2 = status_2;
 	}
+
+	public int getId_pessoa() {
+		return id_pessoa;
+	}
+
+	public void setId_pessoa(int id_pessoa) {
+		this.id_pessoa = id_pessoa;
+	}
+	
+	
 	
 }
