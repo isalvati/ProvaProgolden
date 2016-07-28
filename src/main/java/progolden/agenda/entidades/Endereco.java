@@ -13,6 +13,21 @@ public class Endereco {
 		this.telefone = telefone;
 		this.id_pessoa = id_pessoa;
 	}
+	
+	
+	public Endereco() {
+		super();
+	}
+
+	public Endereco(int id, String rua, String bairro, String telefone, int id_pessoa) {
+		super();
+		this.id = id;
+		this.rua = rua;
+		this.bairro = bairro;
+		this.telefone = telefone;
+		this.id_pessoa = id_pessoa;
+	}
+
 
 	public int getId() {
 		return id;
@@ -53,6 +68,14 @@ public class Endereco {
 	public void setId_pessoa(int id_pessoa) {
 		this.id_pessoa = id_pessoa;
 	}
+
+	@Override
+	public String toString() {
+		return "Endereco [id=" + id + ", rua=" + rua + ", bairro=" + bairro + ", telefone=" + telefone + ", id_pessoa="
+				+ id_pessoa + "]";
+	}
+	
+	
 	
 	
 	

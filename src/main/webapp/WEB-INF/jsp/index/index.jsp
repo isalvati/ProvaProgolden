@@ -6,5 +6,7 @@
 </head>
 <body>
 	It works!! ${variable} ${linkTo[IndexController].index}
+	<br>
+	It works!! ${listaEnderecos} 
 </body>
 </html>

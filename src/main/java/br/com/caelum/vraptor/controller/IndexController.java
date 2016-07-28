@@ -38,8 +38,10 @@ public class IndexController {
 		//pessoaRepositorio.addPessoa("Igor", "08903775619", 728524800);
 		
 		EnderecoRepositorio enderecoRepositorio = new EnderecoRepositorio();
-		enderecoRepositorio.addEndereco("Rua Dr. Knight 415 A", "Nova Lavras", "3226-1200", 1);
+		//enderecoRepositorio.addEndereco("Rua Dr. Knight 415 A", "Nova Lavras", "3226-1200", 1);
+		String lista = enderecoRepositorio.listEndereco().toString();
 		
-		result.include("variable", "VRaptor!");
+		result.include("variable", lista);
+		//result.include("listaEnderecos", lista);
 	}
 }

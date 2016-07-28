@@ -1,5 +1,9 @@
 package progolden.agenda.repositorios;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import progolden.agenda.entidades.Endereco;
@@ -21,5 +25,13 @@ public class EnderecoRepositorio {
 	private void fecharConexao() {
 		this.session.getTransaction().commit();
 		this.session.close();
+	}
+	
+	public List<Endereco> listEndereco(){
+		abrirConexao();
+		Query query = session.createQuery("FROM " + Endereco.class.getName());
+		List results = query.list();
+		fecharConexao();
+		return results;
 	}
 }
