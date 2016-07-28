@@ -8,6 +8,7 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import progolden.agenda.entidades.Usuario;
+import progolden.agenda.repositorios.EnderecoRepositorio;
 import progolden.agenda.repositorios.PessoaRepositorio;
 import progolden.agenda.repositorios.UsuarioRepositorio;
 
@@ -33,8 +34,12 @@ public class IndexController {
 		//UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
 		//usuarioRepositorio.addUsuario("teste", 1, 2);
 		
-		PessoaRepositorio pessoaRepositorio = new PessoaRepositorio();
-		pessoaRepositorio.addPessoa("Igor", "08903775619", 728524800);
+		//PessoaRepositorio pessoaRepositorio = new PessoaRepositorio();
+		//pessoaRepositorio.addPessoa("Igor", "08903775619", 728524800);
+		
+		EnderecoRepositorio enderecoRepositorio = new EnderecoRepositorio();
+		enderecoRepositorio.addEndereco("Rua Dr. Knight 415 A", "Nova Lavras", "3226-1200", 1);
+		
 		result.include("variable", "VRaptor!");
 	}
 }

@@ -16,6 +16,7 @@
 		
 		<mapping resource="Usuario.hbm.xml" />
 		<mapping resource="Pessoa.hbm.xml" />
+		<mapping resource="Endereco.hbm.xml" />
 		
 	</session-factory>
 </hibernate-configuration>
