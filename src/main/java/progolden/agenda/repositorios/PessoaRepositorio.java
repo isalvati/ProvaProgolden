@@ -1,5 +1,8 @@
 package progolden.agenda.repositorios;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import progolden.agenda.entidades.Pessoa;
@@ -21,5 +24,13 @@ private Session session;
 	private void fecharConexao() {
 		this.session.getTransaction().commit();
 		this.session.close();
+	}
+	
+	public List<Pessoa> listPessoa(){
+		abrirConexao();
+		Query query = session.createQuery("FROM " + Pessoa.class.getName());
+		List results = query.list();
+		fecharConexao();
+		return results;
 	}
 }

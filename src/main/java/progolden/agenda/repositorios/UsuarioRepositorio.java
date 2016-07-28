@@ -1,7 +1,11 @@
 package progolden.agenda.repositorios;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 
+import progolden.agenda.entidades.Endereco;
 import progolden.agenda.entidades.Usuario;
 
 public class UsuarioRepositorio {
@@ -22,5 +26,13 @@ public class UsuarioRepositorio {
 	private void fecharConexao() {
 		this.session.getTransaction().commit();
 		this.session.close();
+	}
+	
+	public List<Usuario> listUsuario(){
+		abrirConexao();
+		Query query = session.createQuery("FROM " + Usuario.class.getName());
+		List results = query.list();
+		fecharConexao();
+		return results;
 	}
 }

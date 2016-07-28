@@ -7,6 +7,11 @@
 <body>
 	It works!! ${variable} ${linkTo[IndexController].index}
 	<br>
-	It works!! ${listaEnderecos} 
+	It works!! ${listaEnderecos}
+	<br>
+	It works!! ${listaPessoas}
+	<br>
+	It works!! ${listaUsuarios}
+	 
 </body>
 </html>

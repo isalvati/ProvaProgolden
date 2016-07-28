@@ -31,17 +31,19 @@ public class IndexController {
 
 	@Path("/")
 	public void index() {		
-		//UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
-		//usuarioRepositorio.addUsuario("teste", 1, 2);
+		UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+		String listaUsuarios = usuarioRepositorio.listUsuario().toString();
 		
-		//PessoaRepositorio pessoaRepositorio = new PessoaRepositorio();
-		//pessoaRepositorio.addPessoa("Igor", "08903775619", 728524800);
+		PessoaRepositorio pessoaRepositorio = new PessoaRepositorio();
+		String listaPessoas = pessoaRepositorio.listPessoa().toString();
 		
 		EnderecoRepositorio enderecoRepositorio = new EnderecoRepositorio();
 		//enderecoRepositorio.addEndereco("Rua Dr. Knight 415 A", "Nova Lavras", "3226-1200", 1);
-		String lista = enderecoRepositorio.listEndereco().toString();
+		String listaEnderecos = enderecoRepositorio.listEndereco().toString();
 		
-		result.include("variable", lista);
-		//result.include("listaEnderecos", lista);
+		result.include("variable", "VRaptor!");
+		result.include("listaEnderecos", listaEnderecos);
+		result.include("listaPessoas", listaPessoas);
+		result.include("listaUsuarios", listaUsuarios);
 	}
 }

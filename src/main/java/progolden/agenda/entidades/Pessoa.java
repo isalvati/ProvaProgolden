@@ -11,6 +11,24 @@ public class Pessoa {
 		this.cpf = cpf;
 		this.nascimento = nascimento;
 	}
+	
+	
+
+	public Pessoa(int id, String nome, String cpf, long nascimento) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.nascimento = nascimento;
+	}
+
+
+
+	public Pessoa() {
+		super();
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -42,6 +60,13 @@ public class Pessoa {
 
 	public void setNascimento(long nascimento) {
 		this.nascimento = nascimento;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Pessoa [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", nascimento=" + nascimento + "]";
 	}
 	
 	

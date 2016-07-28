@@ -13,6 +13,24 @@ public class Usuario {
 		this.status_2 = status_2;
 		this.id_pessoa = id_pessoa;
 	}
+	
+	
+
+	public Usuario() {
+		super();
+	}
+
+
+
+	public Usuario(int id, String login, int status_2, int id_pessoa) {
+		super();
+		this.id = id;
+		this.login = login;
+		this.status_2 = status_2;
+		this.id_pessoa = id_pessoa;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -45,6 +63,16 @@ public class Usuario {
 	public void setId_pessoa(int id_pessoa) {
 		this.id_pessoa = id_pessoa;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", login=" + login + ", status_2=" + status_2 + ", id_pessoa=" + id_pessoa + "]";
+	}
+	
+	
+	
 	
 	
 	
