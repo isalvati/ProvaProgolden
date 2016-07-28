@@ -17,6 +17,12 @@ public class EnderecoRepositorio {
 		this.session.save(new Endereco(rua, bairro, telefone, id_pessoa));
 		fecharConexao();
 	}
+	
+	public void addEndereco(Endereco e) {
+		abrirConexao();
+		this.session.save(e);
+		fecharConexao();
+	}
 
 	private void abrirConexao() {
 		this.session = SessionSingleton.getFactory().openSession();
