@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import progolden.agenda.entidades.Endereco;
+import progolden.agenda.entidades.Pessoa;
 
 public class EnderecoRepositorio {
 	private Session session;
@@ -33,5 +34,11 @@ public class EnderecoRepositorio {
 		List results = query.list();
 		fecharConexao();
 		return results;
+	}
+	
+	public void updateEndereco(Endereco e){
+		abrirConexao();
+		this.session.update(e);
+		fecharConexao();
 	}
 }

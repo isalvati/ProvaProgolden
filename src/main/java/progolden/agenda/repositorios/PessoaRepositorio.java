@@ -33,4 +33,10 @@ private Session session;
 		fecharConexao();
 		return results;
 	}
+	
+	public void updatePessoa(Pessoa p){
+		abrirConexao();
+		this.session.update(p);
+		fecharConexao();
+	}
 }

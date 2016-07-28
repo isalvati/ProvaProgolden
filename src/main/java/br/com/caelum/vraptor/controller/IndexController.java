@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
+import progolden.agenda.entidades.Endereco;
+import progolden.agenda.entidades.Pessoa;
 import progolden.agenda.entidades.Usuario;
 import progolden.agenda.repositorios.EnderecoRepositorio;
 import progolden.agenda.repositorios.PessoaRepositorio;
@@ -32,13 +34,18 @@ public class IndexController {
 	@Path("/")
 	public void index() {		
 		UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+		Usuario u = new Usuario(3,"igor_salvati", 1, 1);
+		usuarioRepositorio.updateUsuario(u);
 		String listaUsuarios = usuarioRepositorio.listUsuario().toString();
 		
 		PessoaRepositorio pessoaRepositorio = new PessoaRepositorio();
+		Pessoa p = new Pessoa(1, "Igor Salvati", "08903775619", 728524800);
+		pessoaRepositorio.updatePessoa(p);
 		String listaPessoas = pessoaRepositorio.listPessoa().toString();
 		
 		EnderecoRepositorio enderecoRepositorio = new EnderecoRepositorio();
-		//enderecoRepositorio.addEndereco("Rua Dr. Knight 415 A", "Nova Lavras", "3226-1200", 1);
+		Endereco e = new Endereco(1,"Av. Silvio Menicucci 415 A", "Nova Lavras", "3826-9999", 1);
+		enderecoRepositorio.updateEndereco(e);
 		String listaEnderecos = enderecoRepositorio.listEndereco().toString();
 		
 		result.include("variable", "VRaptor!");

@@ -12,6 +12,16 @@
 	It works!! ${listaPessoas}
 	<br>
 	It works!! ${listaUsuarios}
+	<br><br>
+	<form action="adicionaContato">
+      Rua: <input type="text" name="rua" /><br />
+      Bairro: <input type="text" name="bairro" /><br />
+      Telefone: <input type="text" name="telefone" /><br />
+      Data Nascimento: 
+        <input type="text" name="dataNascimento" /><br />
+      
+      <input type="submit" value="Gravar" />
+    </form>
 	 
 </body>
 </html>
