@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page import="progolden.agenda.entidades.Endereco"%>
-<%@page import="progolden.agenda.repositorios.EnderecoRepositorio"%>
+<%@page import="progolden.agenda.entidades.Pessoa"%>
+<%@page import="progolden.agenda.repositorios.PessoaRepositorio"%>
 <%@page import="java.util.List"%>
 <html>
 <head>
@@ -29,43 +29,33 @@
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3>Adicionar endereços na Agenda</h3>
+				<h3>Adicionar contato na Agenda</h3>
 			</div>
 			<div class="panel-body">
-				<form action="${linkTo[EnderecoController].adcionaEndereco}"
+				<form action="${linkTo[PessoaController].adcionaPessoa}"
 					method="POST">
 					<div class="input-group input-group-lg">
 						<span class="input-group-addon" id="sizing-addon1">Rua </span> <input
-							name="endereco.rua" id="rua" type="text" class="form-control"
-							placeholder="Ex.: Av. Silvio Menicucci"
+							name="pessoa.nome" id="nome" type="text" class="form-control"
+							placeholder="Ex.: Fulano de Tal"
 							aria-describedby="sizing-addon1">
 					</div>
 					<br>
 					<div class="input-group input-group-lg">
 						<span class="input-group-addon" id="sizing-addon1"> Bairro
-						</span> <input name="endereco.bairro" id="bairro" type="text"
-							class="form-control" placeholder="Ex.: Centro"
+						</span> <input name="pessoa.cpf" id="cpf" type="text"
+							class="form-control" placeholder="Ex.: 000.000.000-00"
 							aria-describedby="sizing-addon1">
 					</div>
 					<br>
 					<div class="input-group input-group-lg">
 						<span class="input-group-addon" id="sizing-addon1">
-							Telefone </span> <input name="endereco.telefone" id="telefone"
+							Data de Nascimento </span> <input name="pessoa.nascimento" id="nascimento"
 							type="text" class="form-control"
-							placeholder="Ex.: (99) 9999-9999"
+							placeholder=""
 							aria-describedby="sizing-addon1">
 					</div>
 					<br>
-					<div class="input-group input-group-lg">
-						<span class="input-group-addon" id="sizing-addon1">Pessoa</span> <select
-							name="endereco.id_pessoa" class="form-control">
-							<!--<jsp:useBean id="Pessoa"
-								class="br.com.caelum.vraptor.controller.PessoaController" />-->
-							<c:forEach var="pessoa" items="${listPessoas}">
-								<option value="${pessoa.id}">${pessoa.nome}</option>
-							</c:forEach>\
-						</select>
-					</div>
 					<br>
 					<button type="submit" class="btn btn-success" title="Salvar">
 						<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>

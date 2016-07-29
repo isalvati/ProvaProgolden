@@ -10,6 +10,7 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import progolden.agenda.entidades.Endereco;
+import progolden.agenda.entidades.EnderecoPessoa;
 import progolden.agenda.entidades.Pessoa;
 import progolden.agenda.entidades.Usuario;
 import progolden.agenda.repositorios.EnderecoRepositorio;
@@ -44,15 +45,19 @@ public class IndexController {
 		//Pessoa p = new Pessoa(1, "Igor Salvati", "08903775619", 728524800);
 		//pessoaRepositorio.updatePessoa(p);
 		List<Pessoa> listaPessoas = pessoaRepositorio.listPessoa();
+		result.include("listPessoas", listaPessoas);
 		
 		/*EnderecoRepositorio enderecoRepositorio = new EnderecoRepositorio();
-		Endereco e = new Endereco(1,"Av. Silvio Menicucci 415 A", "Nova Lavras", "3826-9999", 1);
+		List<EnderecoPessoa> listaEnderecosPessoa = enderecoRepositorio.listEnderecoPessoa();
+		result.include("listEnderecosPessoa", listaEnderecosPessoa);
+		/*Endereco e = new Endereco(1,"Av. Silvio Menicucci 415 A", "Nova Lavras", "3826-9999", 1);
 		enderecoRepositorio.updateEndereco(e);
-		String listaEnderecos = enderecoRepositorio.listEndereco().toString();
+		String listaEnderecos = enderecoRepositorio.listEndereco().toString();*/
 		
-		result.include("variable", "VRaptor!");
+		
+		/*result.include("variable", "VRaptor!");
 		result.include("listaEnderecos", listaEnderecos);*/
-		result.include("listPessoas", listaPessoas);
+		
 		//result.include("listaUsuarios", listaUsuarios);
 	}
 }

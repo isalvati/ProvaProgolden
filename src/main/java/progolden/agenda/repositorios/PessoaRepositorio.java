@@ -16,6 +16,12 @@ private Session session;
 		fecharConexao();
 	}
 	
+	public void addPessoa(Pessoa p) {
+		abrirConexao();
+		this.session.save(p);	
+		fecharConexao();
+	}
+	
 	private void abrirConexao() {
 		this.session = SessionSingleton.getFactory().openSession();
 		session.beginTransaction();
@@ -28,7 +34,7 @@ private Session session;
 	
 	public List<Pessoa> listPessoa(){
 		abrirConexao();
-		Query query = session.createQuery("FROM " + Pessoa.class.getName());
+		Query query = session.createQuery("FROM " + Pessoa.class.getName() + " ORDER BY nome");
 		List results = query.list();
 		fecharConexao();
 		return results;

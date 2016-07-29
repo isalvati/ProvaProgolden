@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import progolden.agenda.entidades.Endereco;
+import progolden.agenda.entidades.EnderecoPessoa;
 import progolden.agenda.entidades.Pessoa;
 
 public class EnderecoRepositorio {
@@ -46,5 +47,15 @@ public class EnderecoRepositorio {
 		abrirConexao();
 		this.session.update(e);
 		fecharConexao();
+	}
+	
+	public List<EnderecoPessoa> listEnderecoPessoa(){
+		abrirConexao();
+		Query query = session.createSQLQuery("SELECT p.nome, e.rua, e.bairro, e.telefone "
+				+ "FROM endereco as e inner join pessoa as p on e.id_pessoa = p.id "
+				+ "order by p.nome");
+		List results = query.list();
+		fecharConexao();
+		return results;
 	}
 }
