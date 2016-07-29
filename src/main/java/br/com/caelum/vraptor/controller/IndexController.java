@@ -1,5 +1,7 @@
 package br.com.caelum.vraptor.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.hibernate.SessionFactory;
@@ -33,24 +35,24 @@ public class IndexController {
 
 	@Path("/")
 	public void index() {		
-		UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+		/*UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
 		Usuario u = new Usuario(3,"igor_salvati", 1, 1);
 		usuarioRepositorio.updateUsuario(u);
 		String listaUsuarios = usuarioRepositorio.listUsuario().toString();
-		
+		*/
 		PessoaRepositorio pessoaRepositorio = new PessoaRepositorio();
-		Pessoa p = new Pessoa(1, "Igor Salvati", "08903775619", 728524800);
-		pessoaRepositorio.updatePessoa(p);
-		String listaPessoas = pessoaRepositorio.listPessoa().toString();
+		//Pessoa p = new Pessoa(1, "Igor Salvati", "08903775619", 728524800);
+		//pessoaRepositorio.updatePessoa(p);
+		List<Pessoa> listaPessoas = pessoaRepositorio.listPessoa();
 		
-		EnderecoRepositorio enderecoRepositorio = new EnderecoRepositorio();
+		/*EnderecoRepositorio enderecoRepositorio = new EnderecoRepositorio();
 		Endereco e = new Endereco(1,"Av. Silvio Menicucci 415 A", "Nova Lavras", "3826-9999", 1);
 		enderecoRepositorio.updateEndereco(e);
 		String listaEnderecos = enderecoRepositorio.listEndereco().toString();
 		
 		result.include("variable", "VRaptor!");
-		result.include("listaEnderecos", listaEnderecos);
-		result.include("listaPessoas", listaPessoas);
-		result.include("listaUsuarios", listaUsuarios);
+		result.include("listaEnderecos", listaEnderecos);*/
+		result.include("listPessoas", listaPessoas);
+		//result.include("listaUsuarios", listaUsuarios);
 	}
 }

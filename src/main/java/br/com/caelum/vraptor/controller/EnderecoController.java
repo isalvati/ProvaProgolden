@@ -14,5 +14,6 @@ public class EnderecoController {
 	@Path("/endereco/adcionaEndereco")
 	public void adcionaEndereco(Endereco endereco){
 		enderecoDao.addEndereco(endereco);
+		
 	}
 }
